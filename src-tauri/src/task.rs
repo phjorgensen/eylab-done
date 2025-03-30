@@ -29,12 +29,7 @@ pub struct TaskList {
     pub tasks: Vec<Task>,
 }
 
-pub trait ListCrud {
-    fn add(&mut self, text: String);
-    fn delete(&mut self, id: Uuid);
-}
-
-impl ListCrud for TaskList {
+impl TaskList {
     fn add(&mut self, text: String) {
         let _ = &self.tasks.push(create_task(text));
     }
